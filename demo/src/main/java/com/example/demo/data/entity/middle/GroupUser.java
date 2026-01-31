@@ -2,7 +2,7 @@ package com.example.demo.data.entity.middle;
 
 import com.example.demo.data.entity.Group;
 import com.example.demo.data.entity.User;
-import com.example.demo.data.enumerate.Role;
+import com.example.demo.data.enumerate.GroupRole;
 import com.example.demo.data.timestamp.Timestamp;
 import jakarta.persistence.*;
 
@@ -17,7 +17,7 @@ public class GroupUser extends Timestamp {
     private Long groupUserId;
 
     @Enumerated(value = EnumType.STRING)
-    private Role role;
+    private GroupRole groupRole;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
