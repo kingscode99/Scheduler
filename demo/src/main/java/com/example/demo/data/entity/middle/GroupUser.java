@@ -5,11 +5,11 @@ import com.example.demo.data.entity.User;
 import com.example.demo.data.enumerate.GroupRole;
 import com.example.demo.data.timestamp.Timestamp;
 import jakarta.persistence.*;
-
-import java.util.ArrayList;
-import java.util.List;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 @Entity
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class GroupUser extends Timestamp {
 
     @Id
@@ -26,7 +26,4 @@ public class GroupUser extends Timestamp {
     @ManyToOne
     @JoinColumn(name = "group_id")
     private Group group;
-
-    @OneToMany(mappedBy = "groupUser")
-    private List<GroupUserSchedule> GUSList = new ArrayList<>();
 }
