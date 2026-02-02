@@ -1,5 +1,7 @@
 package com.example.demo.config.security;
 
+import com.example.demo.Exception.CustomException;
+import com.example.demo.Exception.ErrorCode;
 import com.example.demo.data.entity.User;
 import com.example.demo.data.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +21,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetailsImpl loadUserByUsername(@NonNull String email) throws UsernameNotFoundException {
         User user = userRepository.findByEmail(email)
-                .orElseThrow(() -> new RuntimeException(""));
+                .orElseThrow(() -> new CustomException(ErrorCode.NOT_EXIST_USER));
 
         return new UserDetailsImpl(user, user.getEmail());
     }

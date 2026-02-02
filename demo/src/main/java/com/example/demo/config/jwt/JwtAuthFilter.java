@@ -1,5 +1,7 @@
 package com.example.demo.config.jwt;
 
+import com.example.demo.Exception.CustomException;
+import com.example.demo.Exception.ErrorCode;
 import io.jsonwebtoken.Claims;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -30,7 +32,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         String token = jwtUtil.resolveToken(request);
         if (token != null) {
             if (!jwtUtil.validateToken(token)) {
-                throw new RuntimeException("");
+                throw new CustomException(ErrorCode.NOT_VALIDATE_TOKEN);
             }
             Claims info = jwtUtil.getUserInfoFromToken(token);
             setAuthentication(info.getSubject());
