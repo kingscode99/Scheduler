@@ -1,7 +1,7 @@
 package com.example.demo.data.entity.middle;
 
 import com.example.demo.data.entity.Group;
-import com.example.demo.data.entity.User;
+import com.example.demo.data.entity.user.User;
 import com.example.demo.data.enumerate.GroupRole;
 import com.example.demo.data.timestamp.Timestamp;
 import jakarta.persistence.*;

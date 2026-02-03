@@ -39,12 +39,12 @@ public class JwtUtil {
         key = Keys.hmacShaKeyFor(bytes);
     }
 
-    public String createToken(String email, UserRole role) {
+    public String createToken(String id, UserRole role) {
         Date date = new Date();
 
-        return BEARER_PREFIX +
+        return BEARER_PREFIX + " " +
                 Jwts.builder()
-                        .subject(email)
+                        .subject(id)
                         .expiration(new Date(date.getTime() + 60 * 60 * 1000L))
                         .claim(AUTHORIZATION_KEY, role)
                         .issuedAt(date)
@@ -72,8 +72,8 @@ public class JwtUtil {
         return Jwts.parser().verifyWith(key).build().parseSignedClaims(token).getPayload();
     }
 
-    public Authentication createAuthentication(String email) {
-        UserDetailsImpl userDetails = userDetailsService.loadUserByUsername(email);
+    public Authentication createAuthentication(String id) {
+        UserDetailsImpl userDetails = userDetailsService.loadUserByUsername(id);
         return new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
     }
 

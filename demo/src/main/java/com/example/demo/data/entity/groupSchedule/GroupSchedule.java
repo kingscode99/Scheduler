@@ -1,9 +1,11 @@
 package com.example.demo.data.entity.groupSchedule;
 
-import com.example.demo.data.entity.User;
+import com.example.demo.data.entity.user.User;
 import com.example.demo.data.enumerate.RepeatType;
 import com.example.demo.data.timestamp.Timestamp;
 import jakarta.persistence.*;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -11,6 +13,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class GroupSchedule extends Timestamp {
 
     @Id

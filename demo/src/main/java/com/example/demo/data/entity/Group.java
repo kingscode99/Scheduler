@@ -1,6 +1,7 @@
 package com.example.demo.data.entity;
 
 import com.example.demo.data.entity.middle.GroupUser;
+import com.example.demo.data.entity.user.User;
 import com.example.demo.data.timestamp.Timestamp;
 import jakarta.persistence.*;
 import lombok.AccessLevel;

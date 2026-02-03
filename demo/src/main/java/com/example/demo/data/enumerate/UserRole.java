@@ -8,7 +8,8 @@ import lombok.Getter;
 public enum UserRole {
 
     USER("USER"),
-    ADMIN("ADMIN");
+    ADMIN("ADMIN"),
+    ANONYMOUS("ANONYMOUS");
 
     private final String authority;
 }

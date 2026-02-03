@@ -1,6 +1,6 @@
 package com.example.demo.config.security;
 
-import com.example.demo.data.entity.User;
+import com.example.demo.data.entity.user.User;
 import com.example.demo.data.enumerate.UserRole;
 import lombok.Getter;
 import org.jspecify.annotations.Nullable;

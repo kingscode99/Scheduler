@@ -15,6 +15,7 @@ public class ScheduleService {
 
     public CommonResponseDTO postSingleSchedule(SingleScheduleRequestDTO singleScheduleRequestDTO, UserDetailsImpl userDetails) {
 
+        
         return CommonResponseDTO.builder()
                 .message("일정 생성 성공")
                 .build();
